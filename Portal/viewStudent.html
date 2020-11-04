@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Accomodation System</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="Css/modalReceipt.css">
+    <style>
+       .table_wrapper > table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+        }
+
+        .table_wrapper > table > tr > th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        } 
+
+        .table_wrapper > table > tbody > tr > td > a {
+            text-decoration: none;
+        }
+        
+        .table_wrapper > table > tbody > tr > td > a:hover {
+            color: #3ea175;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-icon" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="navbar_left">
+                <!-- <a href="#">Subscribers</a>
+                <a href="#">Video Management</a> -->
+                <a class="active_link" href="#">Admin</a>
+            </div>
+            <div class="navbar_right">                
+
+                <a href="#" class="bella" style="position: relative;">
+                    <i class="fa fa-bell" ></i>
+                    <span style=" position: absolute;
+                    background-color: #fa1414;
+                    border: 1px solid #fa1414;
+                    border-radius: 16px;
+                    font-size: 7px;
+                    width: 8px;
+                    text-align: center;
+                    color: white;
+                    top: 0px;
+                    left: 14px;">8</span>
+                </a>
+                <a href="#">
+                   <img width="30" src="images/avatar.svg" alt="">
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="main_container">
+               
+                <div class="main_greeting">
+                    <h2>Hello John Doe</h2>
+                    <p>View below the details of the students occupying the available rooms. </p>
+                </div>                
+
+                <div class="table_wrapper">
+                    <table>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Matric No</th>
+                            <th>Receipt</th>
+                        </tr>
+                        <tbody id="student-list"></tbody>
+                            <tr >
+                                <td>John Doe</td>
+                                <td>13BD002681</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-4.jpg</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13BE002671</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-4.jpg</td>
+                            </tr>
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13TA003071</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-4.jpg</td>
+                            </tr>
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13TA003071</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-4.jpg</td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                            </tr>
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13TA003071</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-4.jpg</td>
+                            </tr>
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13TA003071</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Male</td>
+                                <td class="hide">./images/profile-5.jpg</td>
+                            </tr>
+                            <tr>
+                                <td>Johnny Bravo</td>
+                                <td>13DA003071</td>
+                                <td><a href="" class="receipt">View Receipt</a></td>
+                                <td class="hide">Female</td>
+                                <td class="hide">./images/profile-6.jpg</td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+
+                <!-- Modal Receipt -->
+                <div id="id01" class="modal">
+    
+                    <div class="modal-content animate">
+                        <div class="imgcontainer">
+                            <span class="close" title="Close Modal">&times;</span>
+                            <img id="modal-img" src="" alt="Avatar" class="avatar">
+                        </div>
+            
+                        <div class="wrapper">
+                            <div><p>Name:</p><span id="modal-name"></span></div>
+                            <div><p>Mat No:</p><span id="modal-mat"></span></div>
+                            <div><p>Gender:</p><span id="modal-gender"></span></div>
+                            <div class="status">
+                                <button id="btn1">Accept</button>
+                                <button id="btn2">Reject</button>
+                            </div>                
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="sidebar">
+            <div class="sidebar_title">
+                <div class="sidebar_img">
+                    <!-- <img src="images/logo.png" alt=""> -->
+                    <h1><a href="index.html">ToLetMe</a></h1>
+                </div>
+                <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+            </div>
+
+            <div class="sidebar_menu">
+                <div class="sidebar_link">
+                    <a href="index.html">Profile</a>
+                </div>
+                <div class="sidebar_link active_menu_link">
+                    <a href="viewStudent.html">View Student</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="addHostel.html">Add Hostel</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="viewHostel.html">View Hostel</a>
+                </div>
+                <div class="sidebar_link dark-mode">
+                    <label style="font-weight: 700;
+                    margin-right: 10px;
+                    color: #a5aaad;">Enable Dark-mode</label><input type="checkbox" name="theme">
+                    <!-- <a href="#">Others</a> -->
+                </div>
+                <div class="sidebar_link">
+                    <!-- <i class="fa fa-power-off"></i> -->
+                    <a href="login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Js/script.js"></script>
+    <script>
+         let checkbox = document.querySelector('input[name=theme]');
+        let label = document.querySelector('label');
+        checkbox.addEventListener('change', function () {
+            if(this.checked){
+                document.documentElement.setAttribute('data-theme', 'dark');
+                label.innerHTML = 'Disable Dark-mode';
+            }else{
+                document.documentElement.setAttribute('data-theme', 'light');
+                label.innerHTML = 'Enable Dark-mode';
+            }
+        })
+
+        const data = {
+            name: 'John Doe',
+            mat: '14BN0078945',
+            gender: 'Male',
+            src: './images/profile-3.jpg'
+        };
+
+         // Get the modal
+         var modal = document.getElementById('id01');
+
+         var receipts = document.querySelectorAll('.receipt')
+
+        // Gets the close button
+        var closeButton = document.querySelector('.close');
+
+        // When the user clicks the 'X' button it closes the modal
+        closeButton.addEventListener('click', function() {
+            modal.style.display='none';
+        })
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        receipts.forEach(receipt =>{
+            receipt.addEventListener('click', function(z) {
+                z.preventDefault()
+                let matNo = z.target.parentElement.previousElementSibling.textContent;
+                let name = z.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+                let gender = z.target.parentElement.nextElementSibling.textContent;
+                let imgSource = z.target.parentElement.nextElementSibling.nextElementSibling.textContent;
+                console.log(matNo, name, gender, imgSource)
+                const modalImage = document.querySelector('#modal-img');
+                const modalName = document.querySelector('#modal-name');
+                const modalMat = document.querySelector('#modal-mat');
+                const modalGender = document.querySelector('#modal-gender');
+
+                modalImage.src = imgSource
+                modalName.textContent = name;
+                modalMat.textContent = matNo;
+                modalGender.textContent = gender;
+                modal.style.display = 'flex';
+            })
+        });
+        
+        
+    
+    </script>
+    <!-- <script src="file.js"></script> -->
+</body>
+</html>

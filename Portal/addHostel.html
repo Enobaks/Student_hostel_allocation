@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Allocation System</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        .mainContainer_wrapper {
+            border-radius: 10px;
+            height: 80vh;
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .mainContainer_wrapper form {
+            /* width: 100%; */
+            height: 70vh;
+            padding: 10px 20px;
+            background-color: #fbfbfb;
+            border: 1px solid #143429;
+            border-radius: 10px;
+            
+        }
+
+        .mainContainer_wrapper form h1{
+            text-align: center;
+            padding-bottom: 30px;
+            color: black;
+        }
+
+        .mainContainer_wrapper form div{
+            padding-bottom: 20px;
+        }
+
+        .mainContainer_wrapper form div p{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 700;
+            color: black;
+        }
+
+        .mainContainer_wrapper form div span{
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .mainContainer_wrapper form div label {
+            font-size: 20px;
+        }
+        
+        .mainContainer_wrapper form div label:hover{
+            color: black;
+        }
+
+        .gender_wrap label {
+            margin-left: 10px;
+        }
+        .gender_wrap input {
+            margin: 0 10px;
+            transform: scale(1.5);
+        }
+
+        .room_option select, .population select {
+            font-size: 18px;
+            outline: none;
+            margin-left: 10px;
+        }
+
+        .btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .btn button {
+            width: 120px;
+            height: 40px;
+            font-size: 15px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            color: white;
+            background-color: #3ea175c7;
+            transition: transform .5s;
+        }
+
+        .btn button:hover{
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-icon" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="navbar_left">
+                <!-- <a href="#">Subscribers</a>
+                <a href="#">Video Management</a> -->
+                <a class="active_link" href="#">Admin</a>
+            </div>
+            <div class="navbar_right">
+                                
+                <a href="#" class="bella" style="position: relative;">
+                    <i class="fa fa-bell" ></i>
+                    <span style=" position: absolute;
+                    background-color: #fa1414;
+                    border: 1px solid #fa1414;
+                    border-radius: 16px;
+                    font-size: 7px;
+                    width: 8px;
+                    text-align: center;
+                    color: white;
+                    top: 0px;
+                    left: 14px;">8</span>
+                </a>
+                <a href="#">
+                   <img width="30" src="images/avatar.svg" alt="">
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="main_container">
+                <div class="mainContainer_wrapper">
+                   <form action=""> 
+                        <h1>Hostel Form</h1>
+                        <div>
+                            
+                            <p>Hostel Name:</p>
+                            <span>End_Sars Hall</span>
+                        </div>
+                        <div class="gender_wrap">
+                            <p class="gender">Gender:</p>
+                            <label>Male</label><input type="radio" name="gender">
+                            <label>Female</label><input type="radio" name="gender">
+                        </div>
+                        <div class="room_option">
+                            <p>Number of Rooms:</p> 
+                            <select id="number_of_rooms">
+                                <option>--options--</option>
+                                <option>10</option>
+                                <option>20</option>
+                                <option>30</option>
+                            </select>
+                        </div>
+                        <div class="population">
+                            <p>Number of Persons per Room:</p> 
+                            <select id="number_of_persons">
+                                <option>--options--</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                         </div>
+                         
+                         <div class="btn"><button>Add</button></div>
+                   </form>
+                    
+                </div>
+            </div>
+        </main>
+
+        <div id="sidebar">
+            <div class="sidebar_title">
+                <div class="sidebar_img">
+                    <!-- <img src="images/logo.png" alt=""> -->
+                    <h1><a href="index.html">ToLetMe</a></h1>
+                </div>
+                <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+            </div>
+
+            <div class="sidebar_menu">
+                <div class="sidebar_link">
+                    <a href="index.html">Profile</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="viewStudent.html">View Student</a>
+                </div>
+                <div class="sidebar_link active_menu_link">
+                    <a href="addHostel.html">Add Hostel</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="viewHostel.html">View Hostel</a>
+                </div>
+                <div class="sidebar_link dark-mode">
+                    <label class="dark_theme" style="font-weight: 700;
+                    margin-right: 10px;
+                    color: #a5aaad;">Enable Dark-mode</label><input type="checkbox" id="theme" name="theme">
+                    <!-- <a href="#">Others</a> -->
+                </div>
+                <div class="sidebar_link">
+                    <!-- <i class="fa fa-power-off"></i> -->
+                    <a href="login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Js/script.js"></script>
+    <script>    
+        let checkbox = document.querySelector('#theme');
+        let label = document.querySelector('.dark_theme');
+        checkbox.addEventListener('change', function () {
+            if(this.checked){
+                document.documentElement.setAttribute('data-theme', 'dark');
+                label.innerHTML = 'Disable Dark-mode';
+            }else{
+                document.documentElement.setAttribute('data-theme', 'light');
+                label.innerHTML = 'Enable Dark-mode';
+            }
+        });
+    
+      </script>
+</body>
+</html>

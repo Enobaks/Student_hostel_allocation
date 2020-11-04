@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+section {
+	width: 100%;
+	background-color: #f3f4f6;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+.container {
+	border: 1px solid #dedddd;
+	box-shadow:  5px 5px 7px #e7e7e7;
+	width: 40%;
+	height: max-content;
+	border-radius: 15px;
+	margin: auto;
+	padding: 30px 30px;
+}
+
+.container center img {
+	width: 100px;
+}
+
+center {
+	margin-bottom: 10px;
+}
+input {
+	width: 100%; 
+	padding: 10px 5px;
+	font-size: 15px;
+	background-color: #f3f4f6;
+}
+
+.submit_btn{
+	display: flex;
+    justify-content: center;
+}
+
+/* .submit_btn a {
+	width: 100%;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+} */
+	
+
+.submit_btn a  {
+	padding: 10px 0px;
+	width: 30%;
+	height: 40px;
+	border-radius: 10px;
+	border: none;
+	background-color: #3ea175;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+    text-decoration: none;
+}
+
+.submit_btn a:hover {
+	background-color: #3ea175c4;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+
+.user_input input {
+	border-right: 0px;
+	border-left: 0px;
+	border-top: 0px;
+	border-bottom: 1px solid #0a5743;
+	outline: none;
+	margin-bottom: 15px
+}
+
+.radioBtn_wrap {
+	text-align: center;
+}
+
+.user_input .radio_button {
+	width: auto;
+	transform: scale(1.5);
+	margin-right: 20px;
+}
+
+.radioBtn_wrap label {
+	padding-right: 10px;
+}
+
+
+input:focus {
+	outline: none;
+}
+
+
+.actions a {
+	text-decoration: none;
+	font-size: 12px;
+	font-family: arial;
+	color: #4d4d4d
+}
+
+.actions a:hover {
+	color: #3ea175c4;
+}
+
+.new_user {
+	float: right;
+}
+
+.actions {
+	margin-bottom: 30px
+}
+
+.welcome {
+	font-size: 12px;
+	font-family: arial;
+	margin-bottom: 15px
+}
+
+
+.user_input span {
+	position: relative;
+    float: right;
+    top: 33px;
+}
+
+.reg-btn {
+	background-color: #455cd8;
+}
+
+body > section > div > div.welcome_text > div > a {
+	text-decoration: none;
+
+}
+
+
+
+@media screen and (max-width:1200px) {
+	.container {
+		max-width: 55%;
+		width: 55%;
+	}
+} 
+@media screen and (max-width:400px) {
+	.container {
+		max-width: 100%;
+		width: 100%;
+		
+	}
+} 

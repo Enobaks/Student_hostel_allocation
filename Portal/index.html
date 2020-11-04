@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Allocation System</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        .search_input{
+            width: 50%;
+            height: 57px;
+        }
+
+        .search_input span{
+            position: relative;
+            float: right;
+            top: 23px;
+            right: 6px;
+        }
+
+        .search_input input {
+            width: 100%;
+            font-size: 16px;
+            height: 30px;
+            padding: 5px 30px 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="nav-icon" onclick="toggleSidebar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="navbar_left">
+                <!-- <a href="#">Subscribers</a>
+                <a href="#">Video Management</a> -->
+                <a class="active_link" href="#">Admin</a>
+                
+            </div>
+            <div class="navbar_right">               
+               
+                <a href="#" class="bella" style="position: relative;">
+                    <i class="fa fa-bell" ></i>
+                    <span style=" position: absolute;
+                    background-color: #fa1414;
+                    border: 1px solid #fa1414;
+                    border-radius: 16px;
+                    font-size: 7px;
+                    width: 8px;
+                    text-align: center;
+                    color: white;
+                    top: 0px;
+                    left: 14px;">8</span>
+                </a>
+    
+                <a href="#">
+                   <img width="30" src="images/avatar.svg" alt="">
+                </a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="main_container">
+                <h1>Marlians Hall</h1>
+                <!-- <p>Welcome to your admin dashboard</p> -->
+                <div class="credentials">
+                    <div><p>Name:</p><span>Kelvin Clown</span></div>
+                    <div><p>Email:</p><span>kelvin@gmail.com</span></div>
+                    <div><p>Password:</p><span>Kratus4_^1</span></div>
+                </div>
+
+               
+            </div>
+        </main>
+
+        <div id="sidebar">
+            <div class="sidebar_title">
+                <div class="sidebar_img">
+                    <!-- <img src="images/logo.png" alt=""> -->
+                    <h1><a href="index.html">ToLetMe</a></h1>
+                </div>
+                <i class="fa fa-times" id="sidebarIcon" onclick="closeSidebar()"></i>
+            </div>
+
+            <div class="sidebar_menu">
+                <div class="sidebar_link active_menu_link">
+                    <a href="index.html">Profile</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="viewStudent.html">View Student</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="addHostel.html">Add Hostel</a>
+                </div>
+                <div class="sidebar_link">
+                    <a href="viewHostel.html">View Hostel</a>
+                </div>
+                <div class="sidebar_link dark-mode">
+                    <label style="font-weight: 700;
+                    margin-right: 10px;
+                    color: #a5aaad;">Enable Dark-mode</label><input type="checkbox" name="theme">
+                    <!-- <a href="#">Others</a> -->
+                </div>
+                <div class="sidebar_link">
+                    <!-- <i class="fa fa-power-off"></i> -->
+                    <a href="login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="Js/script.js"></script>
+    <script>    
+        let checkbox = document.querySelector('input[name=theme]');
+        let label = document.querySelector('label');
+        checkbox.addEventListener('change', function () {
+            if(this.checked){
+                document.documentElement.setAttribute('data-theme', 'dark');
+                label.innerHTML = 'Disable Dark-mode';
+            }else{
+                document.documentElement.setAttribute('data-theme', 'light');
+                label.innerHTML = 'Enable Dark-mode';
+            }
+        })
+      </script>
+</body>
+</html>
